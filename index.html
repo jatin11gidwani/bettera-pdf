@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Exclusive Report | Bettera</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- PDF Viewer -->
+  <main class="viewer-wrap">
+    <div class="viewer-container" id="viewerContainer">
+      <div class="pdf-pages" id="pdfPages"></div>
+      <div class="pdf-loading" id="pdfLoading">
+        <div class="spinner"></div>
+        <p>Loading document...</p>
+      </div>
+    </div>
+  </main>
+
+  <!-- Full-screen Gate Modal -->
+  <div class="gate-overlay" id="gateOverlay">
+    <div class="gate-card" id="gateCard">
+      <button class="gate-close" id="gateClose" aria-label="Close">&#10005;</button>
+      <h2 class="gate-title">Enter email to download Guide.</h2>
+      <form class="gate-form" id="gateForm" novalidate>
+        <div class="form-group">
+          <label for="email">Email <span class="required">*</span></label>
+          <input type="email" id="email" name="email" placeholder="" required />
+          <span class="field-error" id="emailError">Please enter a valid email address.</span>
+        </div>
+        <button type="submit" class="btn-unlock" id="unlockBtn">
+          <span class="btn-text">Download Guide</span>
+          <span class="btn-loading" id="btnLoading">
+            <span class="btn-spinner"></span> Please wait...
+          </span>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Success Banner -->
+  <div class="success-banner" id="successBanner">
+    <div class="success-inner">
+      <span class="success-icon">&#10003;</span>
+      <div>
+        <strong>Full report unlocked!</strong>
+        <p>You now have access to all pages.</p>
+      </div>
+      <a href="#" class="btn-download" id="downloadBtn" download>Download PDF</a>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
